@@ -9,7 +9,7 @@ import './styles.css'
 
 interface PageHeaderProps{
     title: string;
-    description?:string;
+    description?:string;//propriedade opcional
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -23,8 +23,10 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
                 </div>
                 <div className="header-content">
                     <strong>{props.title}</strong>
-                </div>
+                    { props.description && <p>{props.description}</p>}
+                
                 {props.children}
+                </div>
             </header>
     )
 }
